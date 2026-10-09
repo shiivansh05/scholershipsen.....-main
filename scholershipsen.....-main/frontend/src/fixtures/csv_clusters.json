@@ -1,0 +1,518 @@
+[
+  {
+    "id": "CL-CSV-01",
+    "title": "Aadhaar & Bank Account Duplication Ring (from students.csv)",
+    "pattern": "3 students share exact same Aadhaar 593974214828 and Bank Account 0684041000001517 across multiple classes",
+    "score": 85,
+    "band": "high",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-10-06 14:00:00",
+    "counts": {
+      "students": 3,
+      "institutions": 1,
+      "banks": 1,
+      "mobiles": 2,
+      "addresses": 1,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank account",
+        "points": 25,
+        "text": "3 students claim identical bank account 0684041000001517"
+      },
+      {
+        "signal": "shared_aadhaar",
+        "label": "Duplicated Aadhaar ID",
+        "points": 25,
+        "text": "Identical Aadhaar 593974214828 registered for 3 different student profiles"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared contact number",
+        "points": 20,
+        "text": "Adrash Kumar and Kritika Sharma share contact 9697189784"
+      },
+      {
+        "signal": "category_mismatch",
+        "label": "Category & Parent variance",
+        "points": 15,
+        "text": "Profiles list conflicting caste categories (Gen vs OBC) and conflicting parents"
+      }
+    ],
+    "students": [
+      {
+        "id": "CSV-S1",
+        "name": "Kasturi Sharma",
+        "institution": "J&K Government School (Adm #230)",
+        "institution_id": "INST-CSV-01",
+        "course": "Class 8th",
+        "year": "DOB: 27-04-2008",
+        "attendance": 22,
+        "bank_masked": "\u2022\u2022\u2022\u20221517",
+        "mobile_masked": "96\u2022\u2022\u2022\u20228540",
+        "address": "Father: Parshotam Sharma, Mother: Reva Rani",
+        "amount": 18000,
+        "scheme": "Category: Gen",
+        "doc_hash": "Aadhaar \u2022\u2022\u2022\u20224828",
+        "status": "Flagged"
+      },
+      {
+        "id": "CSV-S19",
+        "name": "Adrash Kumar",
+        "institution": "J&K Government School (Adm #231)",
+        "institution_id": "INST-CSV-01",
+        "course": "Class 8th",
+        "year": "DOB: 21-07-2010",
+        "attendance": 22,
+        "bank_masked": "\u2022\u2022\u2022\u20221517",
+        "mobile_masked": "96\u2022\u2022\u2022\u20229784",
+        "address": "Father: Yogesh Kumar, Mother: Ashu Rani",
+        "amount": 18000,
+        "scheme": "Category: OBC",
+        "doc_hash": "Aadhaar \u2022\u2022\u2022\u20224828",
+        "status": "Flagged"
+      },
+      {
+        "id": "CSV-S29",
+        "name": "Kritika Sharma",
+        "institution": "J&K Government School (Adm #230)",
+        "institution_id": "INST-CSV-01",
+        "course": "Class 8th",
+        "year": "DOB: 10-10-2009",
+        "attendance": 22,
+        "bank_masked": "\u2022\u2022\u2022\u20221517",
+        "mobile_masked": "96\u2022\u2022\u2022\u20229784",
+        "address": "Father: Radhay Sham, Mother: Mukhtiar Rani",
+        "amount": 18000,
+        "scheme": "Category: Gen",
+        "doc_hash": "Aadhaar \u2022\u2022\u2022\u20224828",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-10-06 14:00:00",
+        "officer": "Sentinel CSV Engine",
+        "action": "Cluster Detected",
+        "note": "High-risk duplicate identity and account ring detected in uploaded students.csv"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "CSV-S1",
+          "label": "Kasturi Sharma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Class 8th | Adm #230"
+        },
+        {
+          "id": "CSV-S19",
+          "label": "Adrash Kumar",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Class 8th | Adm #231"
+        },
+        {
+          "id": "CSV-S29",
+          "label": "Kritika Sharma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Class 8th | Adm #230"
+        },
+        {
+          "id": "CSV-ACC-1517",
+          "label": "Account \u2022\u2022\u2022\u20221517",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared Account 0684041000001517"
+        },
+        {
+          "id": "CSV-ADH-4828",
+          "label": "Aadhaar \u2022\u2022\u2022\u20224828",
+          "type": "document",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared Aadhaar 593974214828"
+        },
+        {
+          "id": "CSV-MOB-9784",
+          "label": "Contact \u2022\u2022\u2022\u20229784",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared Contact 9697189784"
+        },
+        {
+          "id": "CSV-MOB-8540",
+          "label": "Contact \u2022\u2022\u2022\u20228540",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Contact 9682558540"
+        }
+      ],
+      "edges": [
+        {
+          "source": "CSV-S1",
+          "target": "CSV-ACC-1517",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S19",
+          "target": "CSV-ACC-1517",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S29",
+          "target": "CSV-ACC-1517",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S1",
+          "target": "CSV-ADH-4828",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S19",
+          "target": "CSV-ADH-4828",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S29",
+          "target": "CSV-ADH-4828",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S1",
+          "target": "CSV-MOB-8540",
+          "label": "USES_MOBILE",
+          "flagged": false
+        },
+        {
+          "source": "CSV-S19",
+          "target": "CSV-MOB-9784",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S29",
+          "target": "CSV-MOB-9784",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-CSV-02",
+    "title": "Duplicate Identity & Beneficiary Pair (from students.csv)",
+    "pattern": "2 students share Aadhaar 323008557821 and Account 0684041000002142",
+    "score": 75,
+    "band": "high",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-10-06 14:02:00",
+    "counts": {
+      "students": 2,
+      "institutions": 1,
+      "banks": 1,
+      "mobiles": 2,
+      "addresses": 1,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank account",
+        "points": 25,
+        "text": "Vansh and Amit Kumar share Account 0684041000002142"
+      },
+      {
+        "signal": "shared_aadhaar",
+        "label": "Duplicated Aadhaar ID",
+        "points": 25,
+        "text": "Identical Aadhaar 323008557821 used on two separate admission files"
+      },
+      {
+        "signal": "attendance",
+        "label": "Attendance verification",
+        "points": 15,
+        "text": "Conflicting age brackets (3rd Class vs 6th Class)"
+      },
+      {
+        "signal": "documents",
+        "label": "Document anomaly",
+        "points": 10,
+        "text": "IFSC JAKA0KALBAR common branch routing"
+      }
+    ],
+    "students": [
+      {
+        "id": "CSV-S16",
+        "name": "Vansh",
+        "institution": "J&K Government School (Adm #525)",
+        "institution_id": "INST-CSV-01",
+        "course": "Class 3rd",
+        "year": "DOB: 20-01-2016",
+        "attendance": 28,
+        "bank_masked": "\u2022\u2022\u2022\u20222142",
+        "mobile_masked": "70\u2022\u2022\u2022\u20221631",
+        "address": "Father: Manohar Lal, Mother: Rekha Rani",
+        "amount": 12000,
+        "scheme": "Category: SC",
+        "doc_hash": "Aadhaar \u2022\u2022\u2022\u20227821",
+        "status": "Flagged"
+      },
+      {
+        "id": "CSV-S40",
+        "name": "Amit Kumar",
+        "institution": "J&K Government School (Adm #254)",
+        "institution_id": "INST-CSV-01",
+        "course": "Class 5th",
+        "year": "DOB: 15-01-2016",
+        "attendance": 28,
+        "bank_masked": "\u2022\u2022\u2022\u20222142",
+        "mobile_masked": "70\u2022\u2022\u2022\u20225533",
+        "address": "Father: Ajeet Kumar, Mother: Jyoti Devi",
+        "amount": 12000,
+        "scheme": "Category: OBC",
+        "doc_hash": "Aadhaar \u2022\u2022\u2022\u20227821",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-10-06 14:02:00",
+        "officer": "Sentinel CSV Engine",
+        "action": "Cluster Detected",
+        "note": "Duplicate Aadhaar and Account pair flagged"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "CSV-S16",
+          "label": "Vansh",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Class 3rd"
+        },
+        {
+          "id": "CSV-S40",
+          "label": "Amit Kumar",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Class 5th"
+        },
+        {
+          "id": "CSV-ACC-2142",
+          "label": "Account \u2022\u2022\u2022\u20222142",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared Account 0684041000002142"
+        },
+        {
+          "id": "CSV-ADH-7821",
+          "label": "Aadhaar \u2022\u2022\u2022\u20227821",
+          "type": "document",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared Aadhaar 323008557821"
+        }
+      ],
+      "edges": [
+        {
+          "source": "CSV-S16",
+          "target": "CSV-ACC-2142",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S40",
+          "target": "CSV-ACC-2142",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S16",
+          "target": "CSV-ADH-7821",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S40",
+          "target": "CSV-ADH-7821",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-CSV-03",
+    "title": "Shared Mobile Contact Triad (from students.csv)",
+    "pattern": "3 students share contact 9149831704 across different classes and parentage",
+    "score": 60,
+    "band": "review",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-10-06 14:05:00",
+    "counts": {
+      "students": 3,
+      "institutions": 1,
+      "banks": 3,
+      "mobiles": 1,
+      "addresses": 1,
+      "documents": 3
+    },
+    "reasons": [
+      {
+        "signal": "shared_mobile",
+        "label": "Shared mobile contact",
+        "points": 20,
+        "text": "3 unrelated students (Vikas, Sumit, Akshara) share mobile 9149831704"
+      },
+      {
+        "signal": "cross_class",
+        "label": "Multi-grade convergence",
+        "points": 15,
+        "text": "Spans 5th, 7th, and 8th grades"
+      },
+      {
+        "signal": "parent_mismatch",
+        "label": "Distinct family heads",
+        "points": 15,
+        "text": "Three different father names registered (Radhay Sham, Rakesh Kumar, Sunil Kumar)"
+      },
+      {
+        "signal": "shared_branch",
+        "label": "Common branch code",
+        "points": 10,
+        "text": "All accounts routed through IFSC JAKA0KALBAR"
+      }
+    ],
+    "students": [
+      {
+        "id": "CSV-S21",
+        "name": "Vikas Sharma",
+        "institution": "J&K Government School (Adm #233)",
+        "institution_id": "INST-CSV-01",
+        "course": "Class 7th",
+        "year": "DOB: 27-02-2011",
+        "attendance": 42,
+        "bank_masked": "\u2022\u2022\u2022\u20221619",
+        "mobile_masked": "91\u2022\u2022\u2022\u20221704",
+        "address": "Father: Radhay Sham, Mother: Asha Rani",
+        "amount": 10000,
+        "scheme": "Category: Gen",
+        "doc_hash": "Aadhaar \u2022\u2022\u2022\u20225612",
+        "status": "Review"
+      },
+      {
+        "id": "CSV-S26",
+        "name": "Sumit Kumar",
+        "institution": "J&K Government School (Adm #636)",
+        "institution_id": "INST-CSV-01",
+        "course": "Class 5th",
+        "year": "DOB: 24-12-2012",
+        "attendance": 42,
+        "bank_masked": "\u2022\u2022\u2022\u20221526",
+        "mobile_masked": "91\u2022\u2022\u2022\u20221704",
+        "address": "Father: Rakesh Kumar, Mother: Taro Devi",
+        "amount": 10000,
+        "scheme": "Category: OBC",
+        "doc_hash": "Aadhaar \u2022\u2022\u2022\u20222620",
+        "status": "Review"
+      },
+      {
+        "id": "CSV-S30",
+        "name": "Akshara",
+        "institution": "J&K Government School (Adm #228)",
+        "institution_id": "INST-CSV-01",
+        "course": "Class 8th",
+        "year": "DOB: 09-08-2009",
+        "attendance": 42,
+        "bank_masked": "\u2022\u2022\u2022\u20221620",
+        "mobile_masked": "91\u2022\u2022\u2022\u20221704",
+        "address": "Father: Sunil Kumar, Mother: Anju Rani",
+        "amount": 10000,
+        "scheme": "Category: OBC",
+        "doc_hash": "Aadhaar \u2022\u2022\u2022\u20227567",
+        "status": "Review"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-10-06 14:05:00",
+        "officer": "Sentinel CSV Engine",
+        "action": "Cluster Detected",
+        "note": "Multi-student contact sharing flagged for officer verification"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "CSV-S21",
+          "label": "Vikas Sharma",
+          "type": "student",
+          "risk": "normal",
+          "details": "Class 7th"
+        },
+        {
+          "id": "CSV-S26",
+          "label": "Sumit Kumar",
+          "type": "student",
+          "risk": "normal",
+          "details": "Class 5th"
+        },
+        {
+          "id": "CSV-S30",
+          "label": "Akshara",
+          "type": "student",
+          "risk": "normal",
+          "details": "Class 8th"
+        },
+        {
+          "id": "CSV-MOB-1704",
+          "label": "Mobile 91\u2022\u2022\u2022\u20221704",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared Contact 9149831704"
+        }
+      ],
+      "edges": [
+        {
+          "source": "CSV-S21",
+          "target": "CSV-MOB-1704",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S26",
+          "target": "CSV-MOB-1704",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "CSV-S30",
+          "target": "CSV-MOB-1704",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,61 @@
+institution_id,name,state,district,type,registered_students,active_students
+INST-001,North Valley Technical Institute,Punjab,Jalandhar,Polytechnic,937,874
+INST-002,Apex Institute of Vocational Studies,Haryana,Rohtak,Private Institute,550,501
+INST-003,Pragathi Engineering College,Telangana,Hyderabad,Engineering,433,362
+INST-004,Sunrise Institute of Technology,Maharashtra,Pune,Polytechnic,1092,912
+INST-005,Modern Vocational Training Center,Rajasthan,Jaipur,Vocational,20,18
+INST-006,Shri Ram Degree College,Uttar Pradesh,Lucknow,Degree College,934,824
+INST-007,National Rural Polytechnic,Bihar,Patna,Polytechnic,267,250
+INST-008,St. Xavier Institute of Sciences,Goa,North Goa,Science,527,458
+INST-009,Vidya Bharti Memorial College,Madhya Pradesh,Bhopal,Degree College,287,247
+INST-010,Global Academy of Higher Learning,Karnataka,Bengaluru,Engineering,1053,885
+INST-011,Government Institute of Higher Studies 11,Haryana,District 12,Private Institute,710,649
+INST-012,Government Institute of Higher Studies 12,Telangana,District 13,Engineering,909,823
+INST-013,Government Institute of Higher Studies 13,Maharashtra,District 14,Polytechnic,271,226
+INST-014,Government Institute of Higher Studies 14,Rajasthan,District 15,Vocational,455,383
+INST-015,Government Institute of Higher Studies 15,Uttar Pradesh,District 1,Degree College,627,568
+INST-016,Government Institute of Higher Studies 16,Bihar,District 2,Polytechnic,546,440
+INST-017,Government Institute of Higher Studies 17,Goa,District 3,Science,603,564
+INST-018,Government Institute of Higher Studies 18,Madhya Pradesh,District 4,Degree College,651,609
+INST-019,Government Institute of Higher Studies 19,Karnataka,District 5,Engineering,669,572
+INST-020,Government Institute of Higher Studies 20,Punjab,District 6,Polytechnic,315,264
+INST-021,Government Institute of Higher Studies 21,Haryana,District 7,Private Institute,826,769
+INST-022,Government Institute of Higher Studies 22,Telangana,District 8,Engineering,646,607
+INST-023,Government Institute of Higher Studies 23,Maharashtra,District 9,Polytechnic,632,520
+INST-024,Government Institute of Higher Studies 24,Rajasthan,District 10,Vocational,16,14
+INST-025,Government Institute of Higher Studies 25,Uttar Pradesh,District 11,Degree College,687,590
+INST-026,Government Institute of Higher Studies 26,Bihar,District 12,Polytechnic,1001,941
+INST-027,Government Institute of Higher Studies 27,Goa,District 13,Science,982,897
+INST-028,Government Institute of Higher Studies 28,Madhya Pradesh,District 14,Degree College,643,516
+INST-029,Government Institute of Higher Studies 29,Karnataka,District 15,Engineering,14,12
+INST-030,Government Institute of Higher Studies 30,Punjab,District 1,Polytechnic,363,323
+INST-031,Government Institute of Higher Studies 31,Haryana,District 2,Private Institute,805,684
+INST-032,Government Institute of Higher Studies 32,Telangana,District 3,Engineering,641,593
+INST-033,Government Institute of Higher Studies 33,Maharashtra,District 4,Polytechnic,636,583
+INST-034,Government Institute of Higher Studies 34,Rajasthan,District 5,Vocational,586,493
+INST-035,Government Institute of Higher Studies 35,Uttar Pradesh,District 6,Degree College,1084,919
+INST-036,Government Institute of Higher Studies 36,Bihar,District 7,Polytechnic,992,843
+INST-037,Government Institute of Higher Studies 37,Goa,District 8,Science,916,766
+INST-038,Government Institute of Higher Studies 38,Madhya Pradesh,District 9,Degree College,442,387
+INST-039,Government Institute of Higher Studies 39,Karnataka,District 10,Engineering,618,496
+INST-040,Government Institute of Higher Studies 40,Punjab,District 11,Polytechnic,1039,875
+INST-041,Government Institute of Higher Studies 41,Haryana,District 12,Private Institute,526,444
+INST-042,Government Institute of Higher Studies 42,Telangana,District 13,Engineering,303,277
+INST-043,Government Institute of Higher Studies 43,Maharashtra,District 14,Polytechnic,305,252
+INST-044,Government Institute of Higher Studies 44,Rajasthan,District 15,Vocational,695,630
+INST-045,Government Institute of Higher Studies 45,Uttar Pradesh,District 1,Degree College,537,436
+INST-046,Government Institute of Higher Studies 46,Bihar,District 2,Polytechnic,980,800
+INST-047,Government Institute of Higher Studies 47,Goa,District 3,Science,592,542
+INST-048,Government Institute of Higher Studies 48,Madhya Pradesh,District 4,Degree College,825,731
+INST-049,Government Institute of Higher Studies 49,Karnataka,District 5,Engineering,1002,878
+INST-050,Government Institute of Higher Studies 50,Punjab,District 6,Polytechnic,529,491
+INST-051,Government Institute of Higher Studies 51,Haryana,District 7,Private Institute,919,794
+INST-052,Government Institute of Higher Studies 52,Telangana,District 8,Engineering,928,818
+INST-053,Government Institute of Higher Studies 53,Maharashtra,District 9,Polytechnic,923,817
+INST-054,Government Institute of Higher Studies 54,Rajasthan,District 10,Vocational,554,444
+INST-055,Government Institute of Higher Studies 55,Uttar Pradesh,District 11,Degree College,415,361
+INST-056,Government Institute of Higher Studies 56,Bihar,District 12,Polytechnic,375,313
+INST-057,Government Institute of Higher Studies 57,Goa,District 13,Science,358,332
+INST-058,Government Institute of Higher Studies 58,Madhya Pradesh,District 14,Degree College,462,383
+INST-059,Government Institute of Higher Studies 59,Karnataka,District 15,Engineering,762,652
+INST-060,Government Institute of Higher Studies 60,Punjab,District 1,Polytechnic,691,614

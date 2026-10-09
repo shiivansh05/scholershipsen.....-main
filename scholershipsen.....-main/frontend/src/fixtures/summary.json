@@ -1,0 +1,70 @@
+{
+  "applications_analyzed": 10000,
+  "students_count": 9200,
+  "institutions_count": 60,
+  "bands": {
+    "normal": 8940,
+    "review": 820,
+    "high": 240
+  },
+  "clusters_count": {
+    "total": 16,
+    "high_risk": 12,
+    "review": 3,
+    "normal": 1
+  },
+  "institutions_flagged": 6,
+  "recent_activities": [
+    {
+      "time": "12 mins ago",
+      "officer": "Vikram Sethi (Sr. Zonal Officer)",
+      "action": "Escalated case",
+      "cluster_id": "CL-104",
+      "note": "Forwarded to State Anti-Corruption Bureau with graph topology evidence."
+    },
+    {
+      "time": "45 mins ago",
+      "officer": "Priya Sharma (Investigator)",
+      "action": "Requested documents",
+      "cluster_id": "CL-107",
+      "note": "Issued summons to Principal of Apex Institute for physical register audit."
+    },
+    {
+      "time": "2 hours ago",
+      "officer": "Amitabh Sen (Nodal Officer)",
+      "action": "Assigned investigator",
+      "cluster_id": "CL-111",
+      "note": "Field audit assigned to Rohtak District Inspectorate."
+    },
+    {
+      "time": "4 hours ago",
+      "officer": "Sunita Patil (Audit Lead)",
+      "action": "Verified evidence",
+      "cluster_id": "CL-115",
+      "note": "Branch manager confirmed account BA115 opened with single identity."
+    },
+    {
+      "time": "Yesterday",
+      "officer": "System Intelligence",
+      "action": "Cluster Detected",
+      "cluster_id": "CL-126",
+      "note": "High-confidence template reuse across 22 applications flagged."
+    }
+  ],
+  "money_at_risk": {
+    "total_rupees": 48200000,
+    "total_rupees_formatted": "\u20b94.82 Cr",
+    "held_before_disbursement": 31200000,
+    "held_formatted": "\u20b93.12 Cr",
+    "pending_recovery": 17000000,
+    "recovery_formatted": "\u20b91.70 Cr",
+    "high_risk_rupees": 28800000,
+    "review_rupees": 19400000
+  },
+  "datasets_integrated": {
+    "user_csv_count": 155,
+    "user_excel_count": 300,
+    "synthetic_applications": 10000,
+    "total_mixed_records": 455
+  }
+}

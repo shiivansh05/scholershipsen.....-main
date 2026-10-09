@@ -1,0 +1,4813 @@
+[
+  {
+    "id": "CL-104",
+    "title": "Cross-Institution Shared Bank & Mobile Ring",
+    "pattern": "Shared bank and mobile ring across 3 independent institutions with attendance anomaly",
+    "score": 87,
+    "band": "high",
+    "status": "open",
+    "is_hero": true,
+    "created_at": "2026-03-28 09:15:00",
+    "counts": {
+      "students": 4,
+      "institutions": 3,
+      "banks": 1,
+      "mobiles": 1,
+      "addresses": 4,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank account",
+        "points": 25,
+        "text": "4 students across 3 institutions route disbursements to single account BA103"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared contact number",
+        "points": 20,
+        "text": "4 unrelated student applications registered with identical mobile 98710003"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution link",
+        "points": 15,
+        "text": "Linked students attend 3 separate geographical institutions (Inst 12, Inst 31, Inst 47)"
+      },
+      {
+        "signal": "attendance",
+        "label": "Attendance anomaly",
+        "points": 15,
+        "text": "Cluster mean attendance is 11.8% (critically below 30% verification threshold)"
+      },
+      {
+        "signal": "documents",
+        "label": "Document similarity",
+        "points": 12,
+        "text": "Income certificates share identical layout geometry and template hash TPL-INC-991"
+      }
+    ],
+    "students": [
+      {
+        "id": "S003",
+        "name": "Aarav Sharma",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "Diploma in Mechanical Engg",
+        "year": "2nd Year",
+        "attendance": 8,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA103",
+        "mobile_masked": "98\u2022\u2022\u2022\u20220003",
+        "address": "42 Canal View Rd, Jalandhar",
+        "amount": 22000,
+        "scheme": "Post-Matric Scholarship",
+        "doc_hash": "TPL-INC-991",
+        "status": "Flagged"
+      },
+      {
+        "id": "S006",
+        "name": "Pooja V. Reddy",
+        "institution": "Pragathi Engineering College",
+        "institution_id": "INST-031",
+        "course": "B.Tech Computer Science",
+        "year": "3rd Year",
+        "attendance": 12,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA103",
+        "mobile_masked": "98\u2022\u2022\u2022\u20220003",
+        "address": "18 Banjara Hills, Hyderabad",
+        "amount": 28000,
+        "scheme": "Merit Scholarship",
+        "doc_hash": "TPL-INC-991",
+        "status": "Flagged"
+      },
+      {
+        "id": "S007",
+        "name": "Karthik Naidu",
+        "institution": "Pragathi Engineering College",
+        "institution_id": "INST-031",
+        "course": "B.Tech Electronics & Comm",
+        "year": "1st Year",
+        "attendance": 16,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA103",
+        "mobile_masked": "98\u2022\u2022\u2022\u20220003",
+        "address": "77 Ring Road, Secunderabad",
+        "amount": 24000,
+        "scheme": "Minority Welfare",
+        "doc_hash": "TPL-INC-991",
+        "status": "Flagged"
+      },
+      {
+        "id": "S008",
+        "name": "Tanvi R. Deshmukh",
+        "institution": "Sunrise Institute of Technology",
+        "institution_id": "INST-047",
+        "course": "Diploma in Civil Engg",
+        "year": "2nd Year",
+        "attendance": 11,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA103",
+        "mobile_masked": "98\u2022\u2022\u2022\u20220003",
+        "address": "104 Model Colony, Pune",
+        "amount": 19000,
+        "scheme": "Girl Child Assistance",
+        "doc_hash": "TPL-INC-991",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-28 09:15:00",
+        "officer": "Sentinel Intelligence",
+        "action": "Cluster Detected",
+        "note": "High-risk convergence detected across Bank BA103 and Mobile 98710003."
+      },
+      {
+        "time": "2026-03-28 11:30:10",
+        "officer": "Rajesh V. (Zonal Insp)",
+        "action": "Case Opened",
+        "note": "Assigned priority review. Notice sent to nodal verification desks."
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "S003",
+          "label": "Aarav Sharma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "North Valley Tech (Att: 8%)"
+        },
+        {
+          "id": "S006",
+          "label": "Pooja V. Reddy",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Pragathi Engg (Att: 12%)"
+        },
+        {
+          "id": "S007",
+          "label": "Karthik Naidu",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Pragathi Engg (Att: 16%)"
+        },
+        {
+          "id": "S008",
+          "label": "Tanvi R. Deshmukh",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Sunrise Tech (Att: 11%)"
+        },
+        {
+          "id": "BANK-BA103",
+          "label": "Account \u2022\u2022\u2022\u2022BA103",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Account linked to 4 separate applications"
+        },
+        {
+          "id": "MOB-98710003",
+          "label": "Mobile 98\u2022\u2022\u2022\u20220003",
+          "type": "mobile",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared primary authentication contact"
+        },
+        {
+          "id": "DOC-991",
+          "label": "Template Hash #991",
+          "type": "document",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Income Cert Certificate Template reused"
+        },
+        {
+          "id": "INST-012",
+          "label": "North Valley Tech",
+          "type": "institution",
+          "risk": "normal",
+          "details": "Jalandhar, Punjab"
+        },
+        {
+          "id": "INST-031",
+          "label": "Pragathi Engg",
+          "type": "institution",
+          "risk": "normal",
+          "details": "Hyderabad, Telangana"
+        },
+        {
+          "id": "INST-047",
+          "label": "Sunrise Tech",
+          "type": "institution",
+          "risk": "normal",
+          "details": "Pune, Maharashtra"
+        },
+        {
+          "id": "ADDR-1",
+          "label": "Canal View Rd",
+          "type": "address",
+          "risk": "normal",
+          "details": "Jalandhar"
+        },
+        {
+          "id": "ADDR-2",
+          "label": "Banjara Hills",
+          "type": "address",
+          "risk": "normal",
+          "details": "Hyderabad"
+        },
+        {
+          "id": "ADDR-3",
+          "label": "Ring Road",
+          "type": "address",
+          "risk": "normal",
+          "details": "Secunderabad"
+        },
+        {
+          "id": "ADDR-4",
+          "label": "Model Colony",
+          "type": "address",
+          "risk": "normal",
+          "details": "Pune"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S003",
+          "target": "BANK-BA103",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S006",
+          "target": "BANK-BA103",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S007",
+          "target": "BANK-BA103",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S008",
+          "target": "BANK-BA103",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S003",
+          "target": "MOB-98710003",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S006",
+          "target": "MOB-98710003",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S007",
+          "target": "MOB-98710003",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S008",
+          "target": "MOB-98710003",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S003",
+          "target": "DOC-991",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        },
+        {
+          "source": "S006",
+          "target": "DOC-991",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        },
+        {
+          "source": "S007",
+          "target": "DOC-991",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        },
+        {
+          "source": "S008",
+          "target": "DOC-991",
+          "label": "HAS_DOCUMENT",
+          "flagged": true
+        },
+        {
+          "source": "S003",
+          "target": "INST-012",
+          "label": "ENROLLED_AT",
+          "flagged": false
+        },
+        {
+          "source": "S006",
+          "target": "INST-031",
+          "label": "ENROLLED_AT",
+          "flagged": false
+        },
+        {
+          "source": "S007",
+          "target": "INST-031",
+          "label": "ENROLLED_AT",
+          "flagged": false
+        },
+        {
+          "source": "S008",
+          "target": "INST-047",
+          "label": "ENROLLED_AT",
+          "flagged": false
+        },
+        {
+          "source": "S003",
+          "target": "ADDR-1",
+          "label": "LIVES_AT",
+          "flagged": false
+        },
+        {
+          "source": "S006",
+          "target": "ADDR-2",
+          "label": "LIVES_AT",
+          "flagged": false
+        },
+        {
+          "source": "S007",
+          "target": "ADDR-3",
+          "label": "LIVES_AT",
+          "flagged": false
+        },
+        {
+          "source": "S008",
+          "target": "ADDR-4",
+          "label": "LIVES_AT",
+          "flagged": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-107",
+    "title": "Ghost Institution Surge",
+    "pattern": "One institution with 14 active students but 62 scholarship applications (4.4x surge)",
+    "score": 82,
+    "band": "high",
+    "status": "assigned",
+    "is_hero": false,
+    "created_at": "2026-03-28 10:33:00",
+    "counts": {
+      "students": 62,
+      "institutions": 1,
+      "banks": 2,
+      "mobiles": 2,
+      "addresses": 31,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "application_surge",
+        "label": "Application surge",
+        "points": 15,
+        "text": "Applications 4.43x greater than active students at Apex Institute (INST-024)"
+      },
+      {
+        "signal": "attendance",
+        "label": "Attendance anomaly",
+        "points": 15,
+        "text": "Average classroom attendance registered at 14.2%"
+      },
+      {
+        "signal": "shared_address",
+        "label": "Shared address cluster",
+        "points": 10,
+        "text": "28 applications originate from same hostel pin without registration"
+      },
+      {
+        "signal": "shared_bank",
+        "label": "Shared disbursement hub",
+        "points": 25,
+        "text": "Sub-groups share batch accounts BA204 and BA209"
+      },
+      {
+        "signal": "document_similarity",
+        "label": "Bulk verification seal",
+        "points": 12,
+        "text": "Same digital stamp hash applied to 58 certificates"
+      }
+    ],
+    "students": [
+      {
+        "id": "S10701",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-024",
+        "institution_id": "INST-024",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 21,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA107",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022107",
+        "address": "District Zone 1",
+        "amount": 23007,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-107",
+        "status": "Flagged"
+      },
+      {
+        "id": "S10702",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-024",
+        "institution_id": "INST-024",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 11,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA107",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022107",
+        "address": "District Zone 2",
+        "amount": 18342,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-107",
+        "status": "Flagged"
+      },
+      {
+        "id": "S10703",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-024",
+        "institution_id": "INST-024",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 22,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA107",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022107",
+        "address": "District Zone 3",
+        "amount": 23938,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-107",
+        "status": "Flagged"
+      },
+      {
+        "id": "S10704",
+        "name": "Priya Nair",
+        "institution": "Inst INST-024",
+        "institution_id": "INST-024",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 19,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA107",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022107",
+        "address": "District Zone 4",
+        "amount": 17470,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-107",
+        "status": "Flagged"
+      },
+      {
+        "id": "S10705",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-024",
+        "institution_id": "INST-024",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 23,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA107",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022107",
+        "address": "District Zone 5",
+        "amount": 25959,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-107",
+        "status": "Flagged"
+      },
+      {
+        "id": "S10706",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-024",
+        "institution_id": "INST-024",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 28,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA107",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022107",
+        "address": "District Zone 6",
+        "amount": 17295,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-107",
+        "status": "Flagged"
+      },
+      {
+        "id": "S10707",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-024",
+        "institution_id": "INST-024",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 28,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA107",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022107",
+        "address": "District Zone 7",
+        "amount": 19107,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-107",
+        "status": "Flagged"
+      },
+      {
+        "id": "S10708",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-024",
+        "institution_id": "INST-024",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 18,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA107",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022107",
+        "address": "District Zone 8",
+        "amount": 25004,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-107",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: One institution with 14 active students but 62 scholarship applications (4.4x surge)"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA107",
+          "label": "Account \u2022\u2022\u2022\u2022BA107",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871107",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022107",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S10701",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 21%"
+        },
+        {
+          "id": "S10702",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 11%"
+        },
+        {
+          "id": "S10703",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 22%"
+        },
+        {
+          "id": "S10704",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 19%"
+        },
+        {
+          "id": "S10705",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 23%"
+        },
+        {
+          "id": "S10706",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 28%"
+        },
+        {
+          "id": "S10707",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 28%"
+        },
+        {
+          "id": "S10708",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 18%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S10701",
+          "target": "BANK-BA107",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S10701",
+          "target": "MOB-9871107",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S10702",
+          "target": "BANK-BA107",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S10702",
+          "target": "MOB-9871107",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S10703",
+          "target": "BANK-BA107",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S10703",
+          "target": "MOB-9871107",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S10704",
+          "target": "BANK-BA107",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S10704",
+          "target": "MOB-9871107",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S10705",
+          "target": "BANK-BA107",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S10705",
+          "target": "MOB-9871107",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S10706",
+          "target": "BANK-BA107",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S10706",
+          "target": "MOB-9871107",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S10707",
+          "target": "BANK-BA107",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S10707",
+          "target": "MOB-9871107",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S10708",
+          "target": "BANK-BA107",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S10708",
+          "target": "MOB-9871107",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-111",
+    "title": "Mobile Farm Network",
+    "pattern": "One primary contact number registered across 18 students at 5 institutions",
+    "score": 75,
+    "band": "high",
+    "status": "documents_requested",
+    "is_hero": false,
+    "created_at": "2026-03-29 10:50:00",
+    "counts": {
+      "students": 18,
+      "institutions": 5,
+      "banks": 2,
+      "mobiles": 1,
+      "addresses": 9,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_mobile",
+        "label": "High-degree shared mobile",
+        "points": 20,
+        "text": "18 students across 5 independent colleges share contact 98710011"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution dispersion",
+        "points": 15,
+        "text": "Cluster spans 5 state institutions"
+      },
+      {
+        "signal": "shared_bank",
+        "label": "Co-occurring account linkages",
+        "points": 25,
+        "text": "3 separate accounts receiving multiple disbursements"
+      },
+      {
+        "signal": "attendance",
+        "label": "Borderline attendance",
+        "points": 15,
+        "text": "Mean attendance across cohort is 26.4%"
+      }
+    ],
+    "students": [
+      {
+        "id": "S11101",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-031",
+        "institution_id": "INST-031",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 20,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA111",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022111",
+        "address": "District Zone 1",
+        "amount": 22479,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-111",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11102",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-031",
+        "institution_id": "INST-031",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 20,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA111",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022111",
+        "address": "District Zone 2",
+        "amount": 15982,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-111",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11103",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-031",
+        "institution_id": "INST-031",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 13,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA111",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022111",
+        "address": "District Zone 3",
+        "amount": 17681,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-111",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11104",
+        "name": "Priya Nair",
+        "institution": "Inst INST-031",
+        "institution_id": "INST-031",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 8,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA111",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022111",
+        "address": "District Zone 4",
+        "amount": 19539,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-111",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11105",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-031",
+        "institution_id": "INST-031",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 6,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA111",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022111",
+        "address": "District Zone 5",
+        "amount": 23638,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-111",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11106",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-031",
+        "institution_id": "INST-031",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 23,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA111",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022111",
+        "address": "District Zone 6",
+        "amount": 17770,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-111",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11107",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-031",
+        "institution_id": "INST-031",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 24,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA111",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022111",
+        "address": "District Zone 7",
+        "amount": 17608,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-111",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11108",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-031",
+        "institution_id": "INST-031",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 6,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA111",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022111",
+        "address": "District Zone 8",
+        "amount": 15163,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-111",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: One primary contact number registered across 18 students at 5 institutions"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA111",
+          "label": "Account \u2022\u2022\u2022\u2022BA111",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871111",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022111",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S11101",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 20%"
+        },
+        {
+          "id": "S11102",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 20%"
+        },
+        {
+          "id": "S11103",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 13%"
+        },
+        {
+          "id": "S11104",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 8%"
+        },
+        {
+          "id": "S11105",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 6%"
+        },
+        {
+          "id": "S11106",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 23%"
+        },
+        {
+          "id": "S11107",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 24%"
+        },
+        {
+          "id": "S11108",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 6%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S11101",
+          "target": "BANK-BA111",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11101",
+          "target": "MOB-9871111",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11102",
+          "target": "BANK-BA111",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11102",
+          "target": "MOB-9871111",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11103",
+          "target": "BANK-BA111",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11103",
+          "target": "MOB-9871111",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11104",
+          "target": "BANK-BA111",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11104",
+          "target": "MOB-9871111",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11105",
+          "target": "BANK-BA111",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11105",
+          "target": "MOB-9871111",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11106",
+          "target": "BANK-BA111",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11106",
+          "target": "MOB-9871111",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11107",
+          "target": "BANK-BA111",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11107",
+          "target": "MOB-9871111",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11108",
+          "target": "BANK-BA111",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11108",
+          "target": "MOB-9871111",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-115",
+    "title": "Consolidated Bank Hub",
+    "pattern": "One bank account receiving 9 payments across 4 institutions",
+    "score": 75,
+    "band": "high",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-03-25 10:25:00",
+    "counts": {
+      "students": 9,
+      "institutions": 4,
+      "banks": 1,
+      "mobiles": 2,
+      "addresses": 4,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank account",
+        "points": 25,
+        "text": "Single account BA115 registered across 9 distinct students"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution distribution",
+        "points": 15,
+        "text": "Spans 4 separate universities in northern zone"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared contact cluster",
+        "points": 20,
+        "text": "Pairs share alternate guardian numbers"
+      },
+      {
+        "signal": "attendance",
+        "label": "Attendance deficit",
+        "points": 15,
+        "text": "Mean verified attendance 22.1%"
+      }
+    ],
+    "students": [
+      {
+        "id": "S11501",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 7,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA115",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022115",
+        "address": "District Zone 1",
+        "amount": 17750,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-115",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11502",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 8,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA115",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022115",
+        "address": "District Zone 2",
+        "amount": 14514,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-115",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11503",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 16,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA115",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022115",
+        "address": "District Zone 3",
+        "amount": 15160,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-115",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11504",
+        "name": "Priya Nair",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 22,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA115",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022115",
+        "address": "District Zone 4",
+        "amount": 17899,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-115",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11505",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 14,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA115",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022115",
+        "address": "District Zone 5",
+        "amount": 24960,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-115",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11506",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 21,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA115",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022115",
+        "address": "District Zone 6",
+        "amount": 17510,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-115",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11507",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 23,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA115",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022115",
+        "address": "District Zone 7",
+        "amount": 16167,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-115",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11508",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 24,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA115",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022115",
+        "address": "District Zone 8",
+        "amount": 23440,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-115",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: One bank account receiving 9 payments across 4 institutions"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA115",
+          "label": "Account \u2022\u2022\u2022\u2022BA115",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871115",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022115",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S11501",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 7%"
+        },
+        {
+          "id": "S11502",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 8%"
+        },
+        {
+          "id": "S11503",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 16%"
+        },
+        {
+          "id": "S11504",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 22%"
+        },
+        {
+          "id": "S11505",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 14%"
+        },
+        {
+          "id": "S11506",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 21%"
+        },
+        {
+          "id": "S11507",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 23%"
+        },
+        {
+          "id": "S11508",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 24%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S11501",
+          "target": "BANK-BA115",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11501",
+          "target": "MOB-9871115",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11502",
+          "target": "BANK-BA115",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11502",
+          "target": "MOB-9871115",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11503",
+          "target": "BANK-BA115",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11503",
+          "target": "MOB-9871115",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11504",
+          "target": "BANK-BA115",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11504",
+          "target": "MOB-9871115",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11505",
+          "target": "BANK-BA115",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11505",
+          "target": "MOB-9871115",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11506",
+          "target": "BANK-BA115",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11506",
+          "target": "MOB-9871115",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11507",
+          "target": "BANK-BA115",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11507",
+          "target": "MOB-9871115",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11508",
+          "target": "BANK-BA115",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11508",
+          "target": "MOB-9871115",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-118",
+    "title": "Duplicate Identity Ring",
+    "pattern": "Name variants, identical guardian and DOB with multi-scheme filings",
+    "score": 72,
+    "band": "high",
+    "status": "assigned",
+    "is_hero": false,
+    "created_at": "2026-03-19 10:13:00",
+    "counts": {
+      "students": 31,
+      "institutions": 2,
+      "banks": 2,
+      "mobiles": 2,
+      "addresses": 15,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "document_similarity",
+        "label": "Identity document duplication",
+        "points": 12,
+        "text": "Exact matching guardian ID and DOB with slight spelling variations"
+      },
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank accounts",
+        "points": 25,
+        "text": "Disbursements funnel into 4 recurring bank accounts"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared contact gateway",
+        "points": 20,
+        "text": "Common family contact phone registered across 31 records"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Multi-institution enrollment",
+        "points": 15,
+        "text": "Concurrent applications filed in 2 separate districts"
+      }
+    ],
+    "students": [
+      {
+        "id": "S11801",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-005",
+        "institution_id": "INST-005",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 21,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA118",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022118",
+        "address": "District Zone 1",
+        "amount": 20669,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-118",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11802",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-005",
+        "institution_id": "INST-005",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 12,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA118",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022118",
+        "address": "District Zone 2",
+        "amount": 15545,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-118",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11803",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-005",
+        "institution_id": "INST-005",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 9,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA118",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022118",
+        "address": "District Zone 3",
+        "amount": 24796,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-118",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11804",
+        "name": "Priya Nair",
+        "institution": "Inst INST-005",
+        "institution_id": "INST-005",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 19,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA118",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022118",
+        "address": "District Zone 4",
+        "amount": 19804,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-118",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11805",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-005",
+        "institution_id": "INST-005",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 19,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA118",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022118",
+        "address": "District Zone 5",
+        "amount": 20735,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-118",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11806",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-005",
+        "institution_id": "INST-005",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 20,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA118",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022118",
+        "address": "District Zone 6",
+        "amount": 25945,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-118",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11807",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-005",
+        "institution_id": "INST-005",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 7,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA118",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022118",
+        "address": "District Zone 7",
+        "amount": 25032,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-118",
+        "status": "Flagged"
+      },
+      {
+        "id": "S11808",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-005",
+        "institution_id": "INST-005",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 26,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA118",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022118",
+        "address": "District Zone 8",
+        "amount": 24587,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-118",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: Name variants, identical guardian and DOB with multi-scheme filings"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA118",
+          "label": "Account \u2022\u2022\u2022\u2022BA118",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871118",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022118",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S11801",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 21%"
+        },
+        {
+          "id": "S11802",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 12%"
+        },
+        {
+          "id": "S11803",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 9%"
+        },
+        {
+          "id": "S11804",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 19%"
+        },
+        {
+          "id": "S11805",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 19%"
+        },
+        {
+          "id": "S11806",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 20%"
+        },
+        {
+          "id": "S11807",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 7%"
+        },
+        {
+          "id": "S11808",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 26%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S11801",
+          "target": "BANK-BA118",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11801",
+          "target": "MOB-9871118",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11802",
+          "target": "BANK-BA118",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11802",
+          "target": "MOB-9871118",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11803",
+          "target": "BANK-BA118",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11803",
+          "target": "MOB-9871118",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11804",
+          "target": "BANK-BA118",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11804",
+          "target": "MOB-9871118",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11805",
+          "target": "BANK-BA118",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11805",
+          "target": "MOB-9871118",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11806",
+          "target": "BANK-BA118",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11806",
+          "target": "MOB-9871118",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11807",
+          "target": "BANK-BA118",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11807",
+          "target": "MOB-9871118",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S11808",
+          "target": "BANK-BA118",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S11808",
+          "target": "MOB-9871118",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-122",
+    "title": "Zero-Attendance Cohort",
+    "pattern": "Paid applicants with 0% to 5% attendance at one vocational center",
+    "score": 70,
+    "band": "high",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-03-25 10:45:00",
+    "counts": {
+      "students": 14,
+      "institutions": 1,
+      "banks": 2,
+      "mobiles": 2,
+      "addresses": 7,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "attendance",
+        "label": "Severe attendance anomaly",
+        "points": 15,
+        "text": "Cohort mean attendance is 2.8% over two consecutive semesters"
+      },
+      {
+        "signal": "application_surge",
+        "label": "Surge ratio exceeded",
+        "points": 15,
+        "text": "National Rural Polytechnic applications 4.0x active student baseline"
+      },
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank cluster",
+        "points": 25,
+        "text": "Multiple payments routed to centralized institutional manager account"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-district claims",
+        "points": 15,
+        "text": "Disbursement requested from remote sub-centers"
+      }
+    ],
+    "students": [
+      {
+        "id": "S12201",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-029",
+        "institution_id": "INST-029",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 18,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA122",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022122",
+        "address": "District Zone 1",
+        "amount": 25931,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-122",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12202",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-029",
+        "institution_id": "INST-029",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 16,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA122",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022122",
+        "address": "District Zone 2",
+        "amount": 15790,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-122",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12203",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-029",
+        "institution_id": "INST-029",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 13,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA122",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022122",
+        "address": "District Zone 3",
+        "amount": 17139,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-122",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12204",
+        "name": "Priya Nair",
+        "institution": "Inst INST-029",
+        "institution_id": "INST-029",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 12,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA122",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022122",
+        "address": "District Zone 4",
+        "amount": 22786,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-122",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12205",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-029",
+        "institution_id": "INST-029",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 20,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA122",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022122",
+        "address": "District Zone 5",
+        "amount": 16296,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-122",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12206",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-029",
+        "institution_id": "INST-029",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 19,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA122",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022122",
+        "address": "District Zone 6",
+        "amount": 17006,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-122",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12207",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-029",
+        "institution_id": "INST-029",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 14,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA122",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022122",
+        "address": "District Zone 7",
+        "amount": 21579,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-122",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12208",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-029",
+        "institution_id": "INST-029",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 13,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA122",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022122",
+        "address": "District Zone 8",
+        "amount": 15235,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-122",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: Paid applicants with 0% to 5% attendance at one vocational center"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA122",
+          "label": "Account \u2022\u2022\u2022\u2022BA122",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871122",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022122",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S12201",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 18%"
+        },
+        {
+          "id": "S12202",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 16%"
+        },
+        {
+          "id": "S12203",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 13%"
+        },
+        {
+          "id": "S12204",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 12%"
+        },
+        {
+          "id": "S12205",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 20%"
+        },
+        {
+          "id": "S12206",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 19%"
+        },
+        {
+          "id": "S12207",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 14%"
+        },
+        {
+          "id": "S12208",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 13%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S12201",
+          "target": "BANK-BA122",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12201",
+          "target": "MOB-9871122",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12202",
+          "target": "BANK-BA122",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12202",
+          "target": "MOB-9871122",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12203",
+          "target": "BANK-BA122",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12203",
+          "target": "MOB-9871122",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12204",
+          "target": "BANK-BA122",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12204",
+          "target": "MOB-9871122",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12205",
+          "target": "BANK-BA122",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12205",
+          "target": "MOB-9871122",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12206",
+          "target": "BANK-BA122",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12206",
+          "target": "MOB-9871122",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12207",
+          "target": "BANK-BA122",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12207",
+          "target": "MOB-9871122",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12208",
+          "target": "BANK-BA122",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12208",
+          "target": "MOB-9871122",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-126",
+    "title": "Document Template Reuse Network",
+    "pattern": "Income certificate template hash duplicated across 22 unrelated candidates",
+    "score": 74,
+    "band": "high",
+    "status": "assigned",
+    "is_hero": false,
+    "created_at": "2026-03-18 10:34:00",
+    "counts": {
+      "students": 22,
+      "institutions": 3,
+      "banks": 2,
+      "mobiles": 2,
+      "addresses": 11,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "documents",
+        "label": "Template metadata hash match",
+        "points": 12,
+        "text": "Identical issuing officer signature hash TPL-INC-404 across 22 applications"
+      },
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank account",
+        "points": 25,
+        "text": "Cluster aggregates into 3 primary bank accounts"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution span",
+        "points": 15,
+        "text": "Claims filed across 3 colleges in western district"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared mobile cluster",
+        "points": 20,
+        "text": "Applications registered from common service kiosk mobile"
+      }
+    ],
+    "students": [
+      {
+        "id": "S12601",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-047",
+        "institution_id": "INST-047",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 9,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA126",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022126",
+        "address": "District Zone 1",
+        "amount": 14828,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-126",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12602",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-047",
+        "institution_id": "INST-047",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 26,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA126",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022126",
+        "address": "District Zone 2",
+        "amount": 22856,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-126",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12603",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-047",
+        "institution_id": "INST-047",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 6,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA126",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022126",
+        "address": "District Zone 3",
+        "amount": 15528,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-126",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12604",
+        "name": "Priya Nair",
+        "institution": "Inst INST-047",
+        "institution_id": "INST-047",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 13,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA126",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022126",
+        "address": "District Zone 4",
+        "amount": 16724,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-126",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12605",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-047",
+        "institution_id": "INST-047",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 19,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA126",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022126",
+        "address": "District Zone 5",
+        "amount": 21956,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-126",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12606",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-047",
+        "institution_id": "INST-047",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 21,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA126",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022126",
+        "address": "District Zone 6",
+        "amount": 17502,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-126",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12607",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-047",
+        "institution_id": "INST-047",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 18,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA126",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022126",
+        "address": "District Zone 7",
+        "amount": 14960,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-126",
+        "status": "Flagged"
+      },
+      {
+        "id": "S12608",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-047",
+        "institution_id": "INST-047",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 11,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA126",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022126",
+        "address": "District Zone 8",
+        "amount": 20209,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-126",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: Income certificate template hash duplicated across 22 unrelated candidates"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA126",
+          "label": "Account \u2022\u2022\u2022\u2022BA126",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871126",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022126",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S12601",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 9%"
+        },
+        {
+          "id": "S12602",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 26%"
+        },
+        {
+          "id": "S12603",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 6%"
+        },
+        {
+          "id": "S12604",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 13%"
+        },
+        {
+          "id": "S12605",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 19%"
+        },
+        {
+          "id": "S12606",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 21%"
+        },
+        {
+          "id": "S12607",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 18%"
+        },
+        {
+          "id": "S12608",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 11%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S12601",
+          "target": "BANK-BA126",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12601",
+          "target": "MOB-9871126",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12602",
+          "target": "BANK-BA126",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12602",
+          "target": "MOB-9871126",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12603",
+          "target": "BANK-BA126",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12603",
+          "target": "MOB-9871126",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12604",
+          "target": "BANK-BA126",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12604",
+          "target": "MOB-9871126",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12605",
+          "target": "BANK-BA126",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12605",
+          "target": "MOB-9871126",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12606",
+          "target": "BANK-BA126",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12606",
+          "target": "MOB-9871126",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12607",
+          "target": "BANK-BA126",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12607",
+          "target": "MOB-9871126",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S12608",
+          "target": "BANK-BA126",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S12608",
+          "target": "MOB-9871126",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-131",
+    "title": "Sudden Application Spike",
+    "pattern": "16 applications generated within a 72-hour window from single IP/kiosk",
+    "score": 70,
+    "band": "high",
+    "status": "documents_requested",
+    "is_hero": false,
+    "created_at": "2026-03-29 10:44:00",
+    "counts": {
+      "students": 16,
+      "institutions": 1,
+      "banks": 2,
+      "mobiles": 2,
+      "addresses": 8,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "application_surge",
+        "label": "Rapid surge anomaly",
+        "points": 15,
+        "text": "16 applications logged within 72 hours from single operator endpoint"
+      },
+      {
+        "signal": "shared_bank",
+        "label": "Shared disbursement accounts",
+        "points": 25,
+        "text": "Cluster routes funds to shared cooperative bank ledger"
+      },
+      {
+        "signal": "documents",
+        "label": "Document similarity",
+        "points": 12,
+        "text": "Consecutively numbered income affidavits with same date stamp"
+      },
+      {
+        "signal": "attendance",
+        "label": "Below threshold attendance",
+        "points": 15,
+        "text": "Registered students exhibit 18.5% average attendance"
+      }
+    ],
+    "students": [
+      {
+        "id": "S13101",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-018",
+        "institution_id": "INST-018",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 14,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA131",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022131",
+        "address": "District Zone 1",
+        "amount": 21454,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-131",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13102",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-018",
+        "institution_id": "INST-018",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 15,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA131",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022131",
+        "address": "District Zone 2",
+        "amount": 20930,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-131",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13103",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-018",
+        "institution_id": "INST-018",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 28,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA131",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022131",
+        "address": "District Zone 3",
+        "amount": 25968,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-131",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13104",
+        "name": "Priya Nair",
+        "institution": "Inst INST-018",
+        "institution_id": "INST-018",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 23,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA131",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022131",
+        "address": "District Zone 4",
+        "amount": 24844,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-131",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13105",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-018",
+        "institution_id": "INST-018",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 28,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA131",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022131",
+        "address": "District Zone 5",
+        "amount": 21973,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-131",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13106",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-018",
+        "institution_id": "INST-018",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 10,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA131",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022131",
+        "address": "District Zone 6",
+        "amount": 17111,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-131",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13107",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-018",
+        "institution_id": "INST-018",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 15,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA131",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022131",
+        "address": "District Zone 7",
+        "amount": 17566,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-131",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13108",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-018",
+        "institution_id": "INST-018",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 7,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA131",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022131",
+        "address": "District Zone 8",
+        "amount": 23489,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-131",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: 16 applications generated within a 72-hour window from single IP/kiosk"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA131",
+          "label": "Account \u2022\u2022\u2022\u2022BA131",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871131",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022131",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S13101",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 14%"
+        },
+        {
+          "id": "S13102",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 15%"
+        },
+        {
+          "id": "S13103",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 28%"
+        },
+        {
+          "id": "S13104",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 23%"
+        },
+        {
+          "id": "S13105",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 28%"
+        },
+        {
+          "id": "S13106",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 10%"
+        },
+        {
+          "id": "S13107",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 15%"
+        },
+        {
+          "id": "S13108",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 7%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S13101",
+          "target": "BANK-BA131",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13101",
+          "target": "MOB-9871131",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13102",
+          "target": "BANK-BA131",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13102",
+          "target": "MOB-9871131",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13103",
+          "target": "BANK-BA131",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13103",
+          "target": "MOB-9871131",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13104",
+          "target": "BANK-BA131",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13104",
+          "target": "MOB-9871131",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13105",
+          "target": "BANK-BA131",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13105",
+          "target": "MOB-9871131",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13106",
+          "target": "BANK-BA131",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13106",
+          "target": "MOB-9871131",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13107",
+          "target": "BANK-BA131",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13107",
+          "target": "MOB-9871131",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13108",
+          "target": "BANK-BA131",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13108",
+          "target": "MOB-9871131",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-135",
+    "title": "Address Stacking Cluster",
+    "pattern": "12 unrelated students registered to single 1-room address",
+    "score": 75,
+    "band": "high",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-03-28 10:25:00",
+    "counts": {
+      "students": 12,
+      "institutions": 2,
+      "banks": 2,
+      "mobiles": 2,
+      "addresses": 6,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_address",
+        "label": "Shared address (non-family)",
+        "points": 10,
+        "text": "12 non-related candidates claim same 120 sq ft residential address"
+      },
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank account",
+        "points": 25,
+        "text": "Payments routed into 2 shared branch accounts"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared contact number",
+        "points": 20,
+        "text": "Single agent contact used for OTP authentication"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution link",
+        "points": 15,
+        "text": "Students enrolled across 2 distinct vocational institutes"
+      }
+    ],
+    "students": [
+      {
+        "id": "S13501",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 7,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA135",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022135",
+        "address": "District Zone 1",
+        "amount": 19138,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-135",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13502",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 7,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA135",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022135",
+        "address": "District Zone 2",
+        "amount": 14821,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-135",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13503",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 24,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA135",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022135",
+        "address": "District Zone 3",
+        "amount": 21811,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-135",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13504",
+        "name": "Priya Nair",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 22,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA135",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022135",
+        "address": "District Zone 4",
+        "amount": 22701,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-135",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13505",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 11,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA135",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022135",
+        "address": "District Zone 5",
+        "amount": 14931,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-135",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13506",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 22,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA135",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022135",
+        "address": "District Zone 6",
+        "amount": 15312,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-135",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13507",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 11,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA135",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022135",
+        "address": "District Zone 7",
+        "amount": 15122,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-135",
+        "status": "Flagged"
+      },
+      {
+        "id": "S13508",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-012",
+        "institution_id": "INST-012",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 25,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA135",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022135",
+        "address": "District Zone 8",
+        "amount": 15113,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-135",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: 12 unrelated students registered to single 1-room address"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA135",
+          "label": "Account \u2022\u2022\u2022\u2022BA135",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871135",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022135",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S13501",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 7%"
+        },
+        {
+          "id": "S13502",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 7%"
+        },
+        {
+          "id": "S13503",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 24%"
+        },
+        {
+          "id": "S13504",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 22%"
+        },
+        {
+          "id": "S13505",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 11%"
+        },
+        {
+          "id": "S13506",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 22%"
+        },
+        {
+          "id": "S13507",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 11%"
+        },
+        {
+          "id": "S13508",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 25%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S13501",
+          "target": "BANK-BA135",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13501",
+          "target": "MOB-9871135",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13502",
+          "target": "BANK-BA135",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13502",
+          "target": "MOB-9871135",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13503",
+          "target": "BANK-BA135",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13503",
+          "target": "MOB-9871135",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13504",
+          "target": "BANK-BA135",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13504",
+          "target": "MOB-9871135",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13505",
+          "target": "BANK-BA135",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13505",
+          "target": "MOB-9871135",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13506",
+          "target": "BANK-BA135",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13506",
+          "target": "MOB-9871135",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13507",
+          "target": "BANK-BA135",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13507",
+          "target": "MOB-9871135",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S13508",
+          "target": "BANK-BA135",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S13508",
+          "target": "MOB-9871135",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-140",
+    "title": "Disbursement & Certificate Syndicate",
+    "pattern": "Shared accounts coupled with duplicated category certificates",
+    "score": 82,
+    "band": "high",
+    "status": "assigned",
+    "is_hero": false,
+    "created_at": "2026-03-21 10:30:00",
+    "counts": {
+      "students": 20,
+      "institutions": 2,
+      "banks": 1,
+      "mobiles": 2,
+      "addresses": 10,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank account",
+        "points": 25,
+        "text": "20 applications funnel through 2 centralized merchant accounts"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared contact ring",
+        "points": 20,
+        "text": "Linked applications authenticate with same mobile pair"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution link",
+        "points": 15,
+        "text": "Applicants enrolled in 2 regional colleges"
+      },
+      {
+        "signal": "documents",
+        "label": "Duplicate certificate seal",
+        "points": 12,
+        "text": "Caste validity certificates possess identical digital seal watermark"
+      }
+    ],
+    "students": [
+      {
+        "id": "S14001",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-042",
+        "institution_id": "INST-042",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 18,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA140",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022140",
+        "address": "District Zone 1",
+        "amount": 15964,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-140",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14002",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-042",
+        "institution_id": "INST-042",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 24,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA140",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022140",
+        "address": "District Zone 2",
+        "amount": 18033,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-140",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14003",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-042",
+        "institution_id": "INST-042",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 24,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA140",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022140",
+        "address": "District Zone 3",
+        "amount": 23740,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-140",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14004",
+        "name": "Priya Nair",
+        "institution": "Inst INST-042",
+        "institution_id": "INST-042",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 7,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA140",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022140",
+        "address": "District Zone 4",
+        "amount": 24147,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-140",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14005",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-042",
+        "institution_id": "INST-042",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 8,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA140",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022140",
+        "address": "District Zone 5",
+        "amount": 20868,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-140",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14006",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-042",
+        "institution_id": "INST-042",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 27,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA140",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022140",
+        "address": "District Zone 6",
+        "amount": 23562,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-140",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14007",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-042",
+        "institution_id": "INST-042",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 24,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA140",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022140",
+        "address": "District Zone 7",
+        "amount": 22565,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-140",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14008",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-042",
+        "institution_id": "INST-042",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 16,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA140",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022140",
+        "address": "District Zone 8",
+        "amount": 18272,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-140",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: Shared accounts coupled with duplicated category certificates"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA140",
+          "label": "Account \u2022\u2022\u2022\u2022BA140",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871140",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022140",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S14001",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 18%"
+        },
+        {
+          "id": "S14002",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 24%"
+        },
+        {
+          "id": "S14003",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 24%"
+        },
+        {
+          "id": "S14004",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 7%"
+        },
+        {
+          "id": "S14005",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 8%"
+        },
+        {
+          "id": "S14006",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 27%"
+        },
+        {
+          "id": "S14007",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 24%"
+        },
+        {
+          "id": "S14008",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 16%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S14001",
+          "target": "BANK-BA140",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14001",
+          "target": "MOB-9871140",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14002",
+          "target": "BANK-BA140",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14002",
+          "target": "MOB-9871140",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14003",
+          "target": "BANK-BA140",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14003",
+          "target": "MOB-9871140",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14004",
+          "target": "BANK-BA140",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14004",
+          "target": "MOB-9871140",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14005",
+          "target": "BANK-BA140",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14005",
+          "target": "MOB-9871140",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14006",
+          "target": "BANK-BA140",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14006",
+          "target": "MOB-9871140",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14007",
+          "target": "BANK-BA140",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14007",
+          "target": "MOB-9871140",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14008",
+          "target": "BANK-BA140",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14008",
+          "target": "MOB-9871140",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-144",
+    "title": "Guardian Hub Aggregation",
+    "pattern": "Single guardian ID claimed by 17 students across 4 institutions",
+    "score": 72,
+    "band": "high",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-03-26 10:23:00",
+    "counts": {
+      "students": 17,
+      "institutions": 4,
+      "banks": 2,
+      "mobiles": 2,
+      "addresses": 8,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_mobile",
+        "label": "Shared guardian contact",
+        "points": 20,
+        "text": "Same guardian phone and name claimed by 17 non-sibling students"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution spread",
+        "points": 15,
+        "text": "Students belong to 4 independent degree faculties"
+      },
+      {
+        "signal": "shared_bank",
+        "label": "Shared account links",
+        "points": 25,
+        "text": "Direct payment routed to guardian account"
+      },
+      {
+        "signal": "documents",
+        "label": "Document verification alert",
+        "points": 12,
+        "text": "Income proofs share identical sanction numbers"
+      }
+    ],
+    "students": [
+      {
+        "id": "S14401",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-055",
+        "institution_id": "INST-055",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 13,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA144",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022144",
+        "address": "District Zone 1",
+        "amount": 18351,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-144",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14402",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-055",
+        "institution_id": "INST-055",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 18,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA144",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022144",
+        "address": "District Zone 2",
+        "amount": 16144,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-144",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14403",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-055",
+        "institution_id": "INST-055",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 27,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA144",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022144",
+        "address": "District Zone 3",
+        "amount": 24575,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-144",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14404",
+        "name": "Priya Nair",
+        "institution": "Inst INST-055",
+        "institution_id": "INST-055",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 15,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA144",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022144",
+        "address": "District Zone 4",
+        "amount": 21491,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-144",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14405",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-055",
+        "institution_id": "INST-055",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 16,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA144",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022144",
+        "address": "District Zone 5",
+        "amount": 15188,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-144",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14406",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-055",
+        "institution_id": "INST-055",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 6,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA144",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022144",
+        "address": "District Zone 6",
+        "amount": 21508,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-144",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14407",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-055",
+        "institution_id": "INST-055",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 25,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA144",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022144",
+        "address": "District Zone 7",
+        "amount": 23224,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-144",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14408",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-055",
+        "institution_id": "INST-055",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 9,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA144",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022144",
+        "address": "District Zone 8",
+        "amount": 15200,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-144",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: Single guardian ID claimed by 17 students across 4 institutions"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA144",
+          "label": "Account \u2022\u2022\u2022\u2022BA144",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871144",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022144",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S14401",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 13%"
+        },
+        {
+          "id": "S14402",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 18%"
+        },
+        {
+          "id": "S14403",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 27%"
+        },
+        {
+          "id": "S14404",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 15%"
+        },
+        {
+          "id": "S14405",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 16%"
+        },
+        {
+          "id": "S14406",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 6%"
+        },
+        {
+          "id": "S14407",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 25%"
+        },
+        {
+          "id": "S14408",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 9%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S14401",
+          "target": "BANK-BA144",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14401",
+          "target": "MOB-9871144",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14402",
+          "target": "BANK-BA144",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14402",
+          "target": "MOB-9871144",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14403",
+          "target": "BANK-BA144",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14403",
+          "target": "MOB-9871144",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14404",
+          "target": "BANK-BA144",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14404",
+          "target": "MOB-9871144",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14405",
+          "target": "BANK-BA144",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14405",
+          "target": "MOB-9871144",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14406",
+          "target": "BANK-BA144",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14406",
+          "target": "MOB-9871144",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14407",
+          "target": "BANK-BA144",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14407",
+          "target": "MOB-9871144",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14408",
+          "target": "BANK-BA144",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14408",
+          "target": "MOB-9871144",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-149",
+    "title": "Tri-Institution Intercept Ring",
+    "pattern": "Shared account across 3 institutions with critical attendance deficit",
+    "score": 79,
+    "band": "high",
+    "status": "assigned",
+    "is_hero": false,
+    "created_at": "2026-03-18 10:45:00",
+    "counts": {
+      "students": 15,
+      "institutions": 3,
+      "banks": 2,
+      "mobiles": 2,
+      "addresses": 7,
+      "documents": 1
+    },
+    "reasons": [
+      {
+        "signal": "shared_bank",
+        "label": "Shared bank account",
+        "points": 25,
+        "text": "Cluster routes 15 student disbursements through one centralized account"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared mobile number",
+        "points": 20,
+        "text": "Shared contact number registered across all filings"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution presence",
+        "points": 15,
+        "text": "Spans 3 independent institutes across state border"
+      },
+      {
+        "signal": "attendance",
+        "label": "Attendance anomaly",
+        "points": 15,
+        "text": "Cluster average attendance stands at 9.4%"
+      }
+    ],
+    "students": [
+      {
+        "id": "S14901",
+        "name": "Rohan Verma",
+        "institution": "Inst INST-033",
+        "institution_id": "INST-033",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 22,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA149",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022149",
+        "address": "District Zone 1",
+        "amount": 18345,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-149",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14902",
+        "name": "Sneha Kulkarni",
+        "institution": "Inst INST-033",
+        "institution_id": "INST-033",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 10,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA149",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022149",
+        "address": "District Zone 2",
+        "amount": 19718,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-149",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14903",
+        "name": "Vikram Rathore",
+        "institution": "Inst INST-033",
+        "institution_id": "INST-033",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 8,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA149",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022149",
+        "address": "District Zone 3",
+        "amount": 18002,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-149",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14904",
+        "name": "Priya Nair",
+        "institution": "Inst INST-033",
+        "institution_id": "INST-033",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 17,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA149",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022149",
+        "address": "District Zone 4",
+        "amount": 18669,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-149",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14905",
+        "name": "Deepak Joshi",
+        "institution": "Inst INST-033",
+        "institution_id": "INST-033",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 11,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA149",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022149",
+        "address": "District Zone 5",
+        "amount": 21179,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-149",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14906",
+        "name": "Ananya Sen",
+        "institution": "Inst INST-033",
+        "institution_id": "INST-033",
+        "course": "Vocational / Technical",
+        "year": "3st Year",
+        "attendance": 23,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA149",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022149",
+        "address": "District Zone 6",
+        "amount": 25526,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-149",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14907",
+        "name": "Manish Tiwari",
+        "institution": "Inst INST-033",
+        "institution_id": "INST-033",
+        "course": "Vocational / Technical",
+        "year": "1st Year",
+        "attendance": 15,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA149",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022149",
+        "address": "District Zone 7",
+        "amount": 24021,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-149",
+        "status": "Flagged"
+      },
+      {
+        "id": "S14908",
+        "name": "Kavita Rao",
+        "institution": "Inst INST-033",
+        "institution_id": "INST-033",
+        "course": "Vocational / Technical",
+        "year": "2st Year",
+        "attendance": 26,
+        "bank_masked": "\u2022\u2022\u2022\u2022BA149",
+        "mobile_masked": "98\u2022\u2022\u2022\u2022149",
+        "address": "District Zone 8",
+        "amount": 22666,
+        "scheme": "Post-Matric Technical",
+        "doc_hash": "TPL-CL-149",
+        "status": "Flagged"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-24 14:20:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Automatic anomaly trigger: Shared account across 3 institutions with critical attendance deficit"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "BANK-BA149",
+          "label": "Account \u2022\u2022\u2022\u2022BA149",
+          "type": "bank",
+          "risk": "high",
+          "is_shared": true,
+          "details": "Shared disbursement destination"
+        },
+        {
+          "id": "MOB-9871149",
+          "label": "Mobile 98\u2022\u2022\u2022\u2022149",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Shared verification contact"
+        },
+        {
+          "id": "S14901",
+          "label": "Rohan Verma",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 22%"
+        },
+        {
+          "id": "S14902",
+          "label": "Sneha Kulkarni",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 10%"
+        },
+        {
+          "id": "S14903",
+          "label": "Vikram Rathore",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 8%"
+        },
+        {
+          "id": "S14904",
+          "label": "Priya Nair",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 17%"
+        },
+        {
+          "id": "S14905",
+          "label": "Deepak Joshi",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 11%"
+        },
+        {
+          "id": "S14906",
+          "label": "Ananya Sen",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 23%"
+        },
+        {
+          "id": "S14907",
+          "label": "Manish Tiwari",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 15%"
+        },
+        {
+          "id": "S14908",
+          "label": "Kavita Rao",
+          "type": "student",
+          "risk": "flagged",
+          "details": "Attendance: 26%"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S14901",
+          "target": "BANK-BA149",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14901",
+          "target": "MOB-9871149",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14902",
+          "target": "BANK-BA149",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14902",
+          "target": "MOB-9871149",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14903",
+          "target": "BANK-BA149",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14903",
+          "target": "MOB-9871149",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14904",
+          "target": "BANK-BA149",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14904",
+          "target": "MOB-9871149",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14905",
+          "target": "BANK-BA149",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14905",
+          "target": "MOB-9871149",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14906",
+          "target": "BANK-BA149",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14906",
+          "target": "MOB-9871149",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14907",
+          "target": "BANK-BA149",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14907",
+          "target": "MOB-9871149",
+          "label": "USES_MOBILE",
+          "flagged": true
+        },
+        {
+          "source": "S14908",
+          "target": "BANK-BA149",
+          "label": "PAID_TO",
+          "flagged": true
+        },
+        {
+          "source": "S14908",
+          "target": "MOB-9871149",
+          "label": "USES_MOBILE",
+          "flagged": true
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-DEC-01",
+    "title": "Family Sibling Pair (Decoy)",
+    "pattern": "Two siblings sharing registered residential address and father mobile number",
+    "score": 35,
+    "band": "normal",
+    "status": "closed",
+    "is_hero": false,
+    "created_at": "2026-03-27 16:45:00",
+    "counts": {
+      "students": 2,
+      "institutions": 1,
+      "banks": 2,
+      "mobiles": 1,
+      "addresses": 1,
+      "documents": 2
+    },
+    "reasons": [
+      {
+        "signal": "shared_address",
+        "label": "Shared address (family)",
+        "points": 10,
+        "text": "Same guardian name and home address registered"
+      },
+      {
+        "signal": "shared_mobile",
+        "label": "Shared guardian contact",
+        "points": 20,
+        "text": "Two siblings use parent mobile number"
+      }
+    ],
+    "students": [
+      {
+        "id": "S-DEC-1",
+        "name": "Candidate 1",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229912",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-0",
+        "status": "Verified"
+      },
+      {
+        "id": "S-DEC-2",
+        "name": "Candidate 2",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229922",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-1",
+        "status": "Verified"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-27 16:45:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Two siblings sharing registered residential address and father mobile number"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "S-DEC-1",
+          "label": "Candidate 1",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "S-DEC-2",
+          "label": "Candidate 2",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "MOB-DEC",
+          "label": "Mobile 98\u2022\u2022\u2022\u20224411",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Parent contact"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S-DEC-1",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        },
+        {
+          "source": "S-DEC-2",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-DEC-02",
+    "title": "Parent Contact Shared (Review)",
+    "pattern": "Two students at same college sharing guardian mobile number",
+    "score": 45,
+    "band": "review",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-03-27 16:45:00",
+    "counts": {
+      "students": 2,
+      "institutions": 1,
+      "banks": 2,
+      "mobiles": 1,
+      "addresses": 1,
+      "documents": 2
+    },
+    "reasons": [
+      {
+        "signal": "shared_mobile",
+        "label": "Shared mobile contact",
+        "points": 20,
+        "text": "2 students at same college share guardian phone"
+      },
+      {
+        "signal": "attendance",
+        "label": "Moderate attendance",
+        "points": 15,
+        "text": "Mean attendance is 32% (just below baseline)"
+      },
+      {
+        "signal": "shared_address",
+        "label": "Same pin code",
+        "points": 10,
+        "text": "Rural pin code shared"
+      }
+    ],
+    "students": [
+      {
+        "id": "S-DEC-1",
+        "name": "Candidate 1",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229912",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-0",
+        "status": "Review"
+      },
+      {
+        "id": "S-DEC-2",
+        "name": "Candidate 2",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229922",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-1",
+        "status": "Review"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-27 16:45:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Two students at same college sharing guardian mobile number"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "S-DEC-1",
+          "label": "Candidate 1",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "S-DEC-2",
+          "label": "Candidate 2",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "MOB-DEC",
+          "label": "Mobile 98\u2022\u2022\u2022\u20224411",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Parent contact"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S-DEC-1",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        },
+        {
+          "source": "S-DEC-2",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-DEC-03",
+    "title": "Low Attendance Verification",
+    "pattern": "Sub-group with low attendance but verified individual accounts",
+    "score": 45,
+    "band": "review",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-03-27 16:45:00",
+    "counts": {
+      "students": 3,
+      "institutions": 1,
+      "banks": 3,
+      "mobiles": 1,
+      "addresses": 1,
+      "documents": 3
+    },
+    "reasons": [
+      {
+        "signal": "attendance",
+        "label": "Attendance review required",
+        "points": 15,
+        "text": "Three candidates exhibit 34% attendance during agricultural harvest period"
+      },
+      {
+        "signal": "shared_address",
+        "label": "Shared village cluster",
+        "points": 10,
+        "text": "Common village hamlet registered"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Separate branches",
+        "points": 15,
+        "text": "Enrolled in morning vs evening batch"
+      }
+    ],
+    "students": [
+      {
+        "id": "S-DEC-1",
+        "name": "Candidate 1",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229912",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-0",
+        "status": "Review"
+      },
+      {
+        "id": "S-DEC-2",
+        "name": "Candidate 2",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229922",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-1",
+        "status": "Review"
+      },
+      {
+        "id": "S-DEC-3",
+        "name": "Candidate 3",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229932",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-2",
+        "status": "Review"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-27 16:45:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Sub-group with low attendance but verified individual accounts"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "S-DEC-1",
+          "label": "Candidate 1",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "S-DEC-2",
+          "label": "Candidate 2",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "S-DEC-3",
+          "label": "Candidate 3",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "MOB-DEC",
+          "label": "Mobile 98\u2022\u2022\u2022\u20224411",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Parent contact"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S-DEC-1",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        },
+        {
+          "source": "S-DEC-2",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        },
+        {
+          "source": "S-DEC-3",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        }
+      ]
+    }
+  },
+  {
+    "id": "CL-DEC-04",
+    "title": "Common Rural Kiosk Mobile",
+    "pattern": "Three applications registered through common village CSC center",
+    "score": 55,
+    "band": "review",
+    "status": "open",
+    "is_hero": false,
+    "created_at": "2026-03-27 16:45:00",
+    "counts": {
+      "students": 3,
+      "institutions": 2,
+      "banks": 3,
+      "mobiles": 1,
+      "addresses": 1,
+      "documents": 3
+    },
+    "reasons": [
+      {
+        "signal": "shared_mobile",
+        "label": "Kiosk mobile registration",
+        "points": 20,
+        "text": "Common Common-Service-Center operator number used"
+      },
+      {
+        "signal": "cross_institution",
+        "label": "Cross-institution link",
+        "points": 15,
+        "text": "Applicants study at adjacent rural polytechnics"
+      },
+      {
+        "signal": "attendance",
+        "label": "Moderate attendance",
+        "points": 15,
+        "text": "Average attendance 38%"
+      }
+    ],
+    "students": [
+      {
+        "id": "S-DEC-1",
+        "name": "Candidate 1",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229912",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-0",
+        "status": "Review"
+      },
+      {
+        "id": "S-DEC-2",
+        "name": "Candidate 2",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229922",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-1",
+        "status": "Review"
+      },
+      {
+        "id": "S-DEC-3",
+        "name": "Candidate 3",
+        "institution": "North Valley Technical Institute",
+        "institution_id": "INST-012",
+        "course": "General Science",
+        "year": "1st Year",
+        "attendance": 36,
+        "bank_masked": "\u2022\u2022\u2022\u20229932",
+        "mobile_masked": "98\u2022\u2022\u2022\u20224411",
+        "address": "Rural Block 4, Sector B",
+        "amount": 15000,
+        "scheme": "Post-Matric",
+        "doc_hash": "TPL-DEC-2",
+        "status": "Review"
+      }
+    ],
+    "timeline": [
+      {
+        "time": "2026-03-27 16:45:00",
+        "officer": "Sentinel Rules Engine",
+        "action": "Cluster Detected",
+        "note": "Three applications registered through common village CSC center"
+      }
+    ],
+    "graph": {
+      "nodes": [
+        {
+          "id": "S-DEC-1",
+          "label": "Candidate 1",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "S-DEC-2",
+          "label": "Candidate 2",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "S-DEC-3",
+          "label": "Candidate 3",
+          "type": "student",
+          "risk": "normal",
+          "details": "Regular student"
+        },
+        {
+          "id": "MOB-DEC",
+          "label": "Mobile 98\u2022\u2022\u2022\u20224411",
+          "type": "mobile",
+          "risk": "amber",
+          "is_shared": true,
+          "details": "Parent contact"
+        }
+      ],
+      "edges": [
+        {
+          "source": "S-DEC-1",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        },
+        {
+          "source": "S-DEC-2",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        },
+        {
+          "source": "S-DEC-3",
+          "target": "MOB-DEC",
+          "label": "USES_MOBILE",
+          "flagged": false
+        }
+      ]
+    }
+  }
+]
